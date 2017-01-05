@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	<meta charset="UTF-8">
+	<meta name="google" content="notranslate" />
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Resize And Move Panel | ResizeMovePanel.js</title>
+
+	<link href="http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link href="example/example.css" rel="stylesheet">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
+
+
+	<script src="ResizeMovePanel.js"></script>
+
+
+		<script>
+			var resizeMovePanel;
+			
+			$( function() {
+				
+				// The Resize And Move Panel
+				resizeMovePanel = new ResizeMovePanel({
+					'panel_slt':'#panel1',
+				});
+			});
+
+		</script>
+		<style>
+
+			
+			.pnl_head1{
+				width:40%;
+				display:inline-block;
+			}
+			
+			.pnl_head2{
+				width:40%;
+				display:inline-block;
+			}
+			
+			.pnl_head3{
+				width:15%;
+				margin-left:auto;
+				display:inline-block;
+				text-align:right;
+			}
+			
+		</style>
+	</head>
+
+<body>
+<div class="container">
+<div class="row">
+	<div id="header" class="col-lg-12" >
+		<h1>ResizeMovePanel.js</h1>
+		<p>The Resize And Move Panel</p>
+	</div>
+</div>
+
+The Resize And Move Panel.<br>
+<br>
+
+Combining Bootstrap panel and jQuery UI to achieve movement and size change. <br>
+"ResizeMovePanel.js" will cope with troublesome combinations.<br>
+"ResizeMovePanel.js" simplifies implementation on your system.<br>
+<br>
+
+<h2>Exampl1</h2>
+Also,Can resize panel by drag lower right corner of panel.<br>
+<br>
+
+<!-- Panel-->
+<div id="box_a" style="width:460px;height:600px;background-color:#c1ffc1">
+
+	<div id="panel1" class="panel panel-primary" >
+		<div id="panel1_head" class="panel-heading">
+			
+			<div class="pnl_head1">ABCDE</div>
+			<div class="pnl_head2">
+				<button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-leaf"></span></button>
+			</div>
+			<div class="pnl_head3">
+				<button id="panel1_fixity_btn" type="button" class="btn btn-primary btn-xs" onclick="resizeMovePanel.offDraggable()">
+					<span class="glyphicon glyphicon-magnet"></span>
+				</button>
+				<button id="panel1_free_btn" type="button" class="btn btn-primary btn-xs" onclick="resizeMovePanel.onDraggable()">
+					<span class="glyphicon glyphicon-new-window"></span>
+				</button>
+				<button type="button" class="btn btn-primary btn-xs" onclick="$('#panel1').hide();">
+					<span class="glyphicon glyphicon-remove"></span>
+				</button>
+			</div>
+		</div>
+		<div id="panel1_body" class="panel-body" style="height:80%">
+			
+			Hello World!.
+			
+		</div>
+	</div>
+	
+</div><!-- box_a -->
+
+
+
+
+<br><hr><br>
+
+
+<h3>Souse Code</h3>
+<pre class="intro_source_code">
+	&lt;link href="http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css" rel="stylesheet"&gt;
+	&lt;link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+	&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
+	&lt;script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"&gt;&lt;/script&gt;
+	&lt;script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"&gt;&lt;/script&gt;
+	&lt;script src="<span class="text-danger">ResizeMovePanel.js</span>"&gt;&lt;/script&gt;
+	
+	---- any code ----
+
+	&lt;script&gt;
+		var resizeMovePanel;
+		$( function() {
+			
+			// The Resize And Move Panel
+			<span class="text-danger">
+			resizeMovePanel = new ResizeMovePanel({
+				'panel_slt':'#panel1',
+			});</span>
+		});
+	&lt;/script&gt;
+
+	&lt;style&gt;
+		.pnl_head1{
+			width:40%;
+			display:inline-block;
+		}
+		.pnl_head2{
+			width:40%;
+			display:inline-block;
+		}
+		.pnl_head3{
+			width:15%;
+			margin-left:auto;
+			display:inline-block;
+			text-align:right;
+		}
+	&lt;/style&gt;
+
+	---- any code ----
+
+	&lt;div style="width:460px;height:600px;background-color:#c1ffc1"&gt;
+	
+		&lt;div id="<span class="text-danger">panel1</span>" class="panel panel-primary" &gt;
+			&lt;div id="panel1_head" class="panel-heading"&gt;
+				
+				&lt;div class="pnl_head1"&gt;ABCDE&lt;/div&gt;
+				&lt;div class="pnl_head2"&gt;
+					&lt;button type="button" class="btn btn-primary btn-xs"&gt;&lt;span class="glyphicon glyphicon-leaf"&gt;&lt;/span&gt;&lt;/button&gt;
+				&lt;/div&gt;
+				&lt;div class="pnl_head3"&gt;
+					&lt;button id="panel1_fixity_btn" type="button" class="btn btn-primary btn-xs" onclick="resizeMovePanel.offDraggable()"&gt;
+						&lt;span class="glyphicon glyphicon-magnet"&gt;&lt;/span&gt;
+					&lt;/button&gt;
+					&lt;button id="panel1_free_btn" type="button" class="btn btn-primary btn-xs" onclick="resizeMovePanel.onDraggable()"&gt;
+						&lt;span class="glyphicon glyphicon-new-window"&gt;&lt;/span&gt;
+					&lt;/button&gt;
+					&lt;button type="button" class="btn btn-primary btn-xs" onclick="$('#panel1').hide();"&gt;
+						&lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
+					&lt;/button&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div id="panel1_body" class="panel-body" style="height:80%"&gt;
+				Hello World!.
+			&lt;/div&gt;
+		&lt;/div&gt;
+		
+	&lt;/div&gt;
+</pre>
+<br><hr><br>
+
+
+
+
+<h3>Other example</h3>
+<ol>
+	<li><a href="example2.html">Example2 : Can include html5 canvas to panel.</a></li>
+</ol>
+<br><hr><br>
+
+
+
+
+
+<div class="row">
+	<div id="footer" class="col-md-12"  >
+		<p>(c)kenji uehara 2016-12-2 | 2017-1-5</p>
+	</div>
+</div>
+</div><!-- container  -->
+</body>
+</html>

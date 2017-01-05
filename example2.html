@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	<meta charset="UTF-8">
+	<meta name="google" content="notranslate" />
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Resize And Move Panel | ResizeMovePanel.js</title>
+
+	<link href="http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link href="example/example.css" rel="stylesheet">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<script src="ResizeMovePanel.js"></script>
+
+
+		<script>
+			var resizeMovePanel;
+			$( function() {
+				// The Resize And Move Panel
+				
+				resizeMovePanel = new ResizeMovePanel({
+					'panel_slt':'#panel1',
+					'canvas_slt':'#canvas1',
+				});
+				
+				// Get a context object of canvas.
+				var context = resizeMovePanel.getContext();
+				
+				// Draw the example triangle to canvas.
+			    context.beginPath();
+			    context.moveTo(100,20);
+			    context.lineTo(150,100);
+			    context.lineTo(50,100);
+			    context.closePath();
+			    context.stroke();
+			});
+			
+			function closePanel(){
+				$('#panel1').hide();
+			}
+			
+
+		</script>
+		<style>
+
+			
+			.pnl_head1{
+				width:40%;
+				display:inline-block;
+			}
+			
+			.pnl_head2{
+				width:40%;
+				display:inline-block;
+			}
+			
+			.pnl_head3{
+				width:15%;
+				margin-left:auto;
+				display:inline-block;
+				text-align:right;
+			}
+			
+		</style>
+	</head>
+
+<body>
+<div class="container">
+
+
+	<div class="row">
+		<div id="header" class="col-lg-12" >
+			<h1>ResizeMovePanel.js</h1>
+			<p>The Resize And Move Panel</p>
+		</div>
+	</div>
+
+
+Can include html5 canvas to panel.<br>
+Change panel size,The canvas size will also change.<br>
+<br>
+
+<!-- Panel. -->
+<div id="box_a" style="width:460px;height:600px;background-color:#c1ffc1">
+
+	<div id="panel1" class="panel panel-primary" >
+		<div id="panel1_head" class="panel-heading">
+			
+			<div class="pnl_head1">ABCDE</div>
+			<div class="pnl_head2">
+				<div class="btn-group">
+					<button type="button" class="btn btn-primary btn-xs">H1</button>
+					<button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-leaf"></span></button>
+					<button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-tree-deciduous"></span></button>
+					
+				</div>
+			</div>
+			<div class="pnl_head3">
+			
+				<button id="panel1_fixity_btn" type="button" class="btn btn-primary btn-xs" onclick="resizeMovePanel.offDraggable()">
+					<span class="glyphicon glyphicon-magnet"></span>
+				</button>
+				
+				<button id="panel1_free_btn" type="button" class="btn btn-primary btn-xs" onclick="resizeMovePanel.onDraggable()">
+					<span class="glyphicon glyphicon-new-window"></span>
+				</button>
+				
+				<button type="button" class="btn btn-primary btn-xs" onclick="closePanel()">
+					<span class="glyphicon glyphicon-remove"></span>
+				</button>
+			</div>
+		</div>
+		<div id="panel1_body" class="panel-body" style="height:80%">
+			
+			<canvas id="canvas1"></canvas>
+			
+		</div>
+
+	</div>
+	
+</div><!-- box_a_left -->
+
+
+
+	<div class="row">
+		<div id="footer" class="col-md-12"  >
+			<p>(c)kenji uehara 2016-12-2 | 2016-12-29</p>
+		</div>
+	</div>
+
+</div><!-- container  -->
+</body>
+</html>
